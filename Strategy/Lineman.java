@@ -1,7 +1,7 @@
 import java.util.Random;
  /**
  * 
- * @author nikitha kondapeta
+ * @author nikitha kondapeta ////////////
  * Another football player position, Lineman extends from the player class
  */
 public class Lineman extends Player{

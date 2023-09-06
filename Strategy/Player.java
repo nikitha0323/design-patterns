@@ -5,24 +5,35 @@
  */
 public abstract class Player {
 
-	protected String name;
-	private boolean defence=true;
-	protected DefenceBehavior defenceBehavior;
+	protected String firstName;
+    protected String lastName;
+	private boolean offence;
+	
+    protected DefenceBehavior defenceBehavior;
 	protected OffenceBehavior offenceBehavior;
 	/**
 	 * Creates a player with an indiciated name and sets the Defence and offence Behavior
 	 * 
 	 */
-	public Player(String name)
+	public Player(String firstName, String lastName, boolean offence)
 	{
-		this.name=name;
-		setDefenceBehavior();
-		setOffenceBehavior();
-	
+		this.firstName = firstName;
+        this.lastName = lastName;
+        this.offence = offence;
 	}
-	public abstract void setDefenceBehavior();
-	
-	public abstract void setOffenceBehavior();
+
+    public void setOffenceBehavior(OffenceBehavior offenceBehavior)
+    {
+        this.offenceBehavior = offenceBehavior;
+    }
+
+    public void setDefenceBehavior(DefenceBehavior defenceBehavior)
+    {
+        this.defenseBehavior = defenseBehavior;
+    }
+
+    
+
 	/**
 	 * 
 	 * String play is representated below
@@ -47,4 +58,13 @@ public abstract class Player {
 	{
 		this.defence=!this.defence;
 	}
+
+    public String toString()
+    return { "Player{"" +
+    "firstName='" + firstName + '\'' +
+    ", lastName='" + lastName + '\'' +
+    ", offense=" + offense + '}';
+    }
+    
+
 }
