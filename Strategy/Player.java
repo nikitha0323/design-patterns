@@ -60,20 +60,6 @@ public abstract class Player {
 		}
 		
 	}
-	// {
-	// 	if(this.offence) 
-	// 	{
-	// 		return this.offenceBehavior.play();
-			
-    //     }
-	// 	else 
-	// 	{
-	// 		if (this.defenceBehavior==null)
-	// 			return "not playing";
-	// 		else
-	// 			return this.defenceBehavior.play();
-    //     }
-	// }
 	
 	private void setDefenceBehavior() {
 	}
