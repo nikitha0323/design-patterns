@@ -1,4 +1,4 @@
-package strategy;
+
 
 public enum PlayerType {
     QUARTER_BACK,

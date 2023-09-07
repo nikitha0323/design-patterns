@@ -5,9 +5,9 @@ public class QuarterBack extends Player {
  * 
  * One of the player positions extending from the parent class
  */
-	public QuarterBack(String name)
+	public QuarterBack(String firstName, String lastName, boolean offence)
 	{
-		super(name);
+		super(firstName, lastName, offence);
 		
 	}
 	/**

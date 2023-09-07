@@ -7,7 +7,7 @@ public abstract class Player {
 
 	protected String firstName;
     protected String lastName;
-	private boolean offence;
+	protected boolean offence;
 	
     protected DefenceBehavior defenceBehavior;
 	protected OffenceBehavior offenceBehavior;
@@ -29,7 +29,7 @@ public abstract class Player {
 
     public void setDefenceBehavior(DefenceBehavior defenceBehavior)
     {
-        this.defenseBehavior = defenseBehavior;
+		this.defenceBehavior = defenceBehavior;
     }
 
     
@@ -40,31 +40,47 @@ public abstract class Player {
 	 */
 	
 	public String play() 
+
 	{
-		if(this.defence) 
+		if (offence && offenceBehavior != null)
 		{
-			return this.offenceBehavior.play();
+			offenceBehavior.play();
+		}
+		else if(! offence && defenceBehavior != null)
+		{
+
+		}
+		else
+		{
+			return "not playing";
+		}
+		return defenceBehavior.play();
+	}
+	// {
+	// 	if(this.offence) 
+	// 	{
+	// 		return this.offenceBehavior.play();
 			
-        }
-		else 
-		{
-			if (this.defenceBehavior==null)
-				return "not playing";
-			else
-				return this.defenceBehavior.play();
-        }
-}
+    //     }
+	// 	else 
+	// 	{
+	// 		if (this.defenceBehavior==null)
+	// 			return "not playing";
+	// 		else
+	// 			return this.defenceBehavior.play();
+    //     }
+	// }
+	
 	public void turnover()
 	{
-		this.defence=!this.defence;
+		this.offence=!this.offence;
 	}
 
+
     public String toString()
-    return { "Player{"" +
-    "firstName='" + firstName + '\'' +
-    ", lastName='" + lastName + '\'' +
-    ", offense=" + offense + '}';
+	{
+		return firstName + " " + lastName;
+	}
     }
     
 
-}

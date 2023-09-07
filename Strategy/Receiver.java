@@ -2,10 +2,10 @@ public class Receiver extends Player{
 	/**
 	 * A receiver position for football player
 	 */
-	public Receiver(String name)
+	public Receiver(String firstName, String lastName, boolean offence)
 	{
 		
-		super(name);
+		super(firstName, lastName, offence);
 	}
 	/**
 	 * Sets the offence behavior for receiver positon to ReceiverBehavior

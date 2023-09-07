@@ -1,14 +1,16 @@
 import java.util.Random;
  /**
  * 
- * @author nikitha kondapeta ////////////
+ * @author nikitha kondapeta 
  * Another football player position, Lineman extends from the player class
  */
 public class Lineman extends Player{
 
-	public Lineman(String name)
+	public Lineman(String firstName, String lastName, boolean offence)
 	{
-		super(name);
+		super(firstName,lastName, offence);
+		setOffenceBehavior();
+		setDefenceBehavior();
 	}
 	/**
 	 * Sets offence behavior for the lineman

@@ -4,9 +4,9 @@ public class Football {
 	
 	public void play() {
 		Player[] players = new Player[3];
-		players[0] = new QuarterBack("Russel Wilson");
-		players[1] = new Receiver("Tyler Lockett");
-		players[2] = new Lineman("BJ Finney");
+		players[0] = new QuarterBack("Russel ", "wilson", false);
+		players[1] = new Receiver("Tyler", " Lockett", false);
+		players[2] = new Lineman("BJ", "Finney", false);
 		
 		System.out.println("***** Offencive Plays *****");
 		displayPlays(players);
@@ -19,7 +19,7 @@ public class Football {
 	public void displayPlays(Player[] players) {
 		for(Player player : players) {
 		//System.out.println("name " + player.name);
-			System.out.println(player.name + " " + player.play());
+			System.out.println(player.firstName + " " + player.play());
 		}
 	}
 	
