@@ -38,23 +38,27 @@ public abstract class Player {
 	 * 
 	 * String play is representated below
 	 */
+
 	
 	public String play() 
 
 	{
-		if (offence && offenceBehavior != null)
+		setDefenceBehavior();
+		setOffenceBehavior();
+
+		if (offence)
 		{
-			offenceBehavior.play();
-		}
-		else if(! offence && defenceBehavior != null)
-		{
+			if(offenceBehavior == null)
+				return "not playing";
+			return offenceBehavior.play();
 
 		}
-		else
-		{
-			return "not playing";
+		else {
+			if(defenceBehavior == null)
+				return "not playing";
+			return defenceBehavior.play();
 		}
-		return defenceBehavior.play();
+		
 	}
 	// {
 	// 	if(this.offence) 
@@ -71,6 +75,12 @@ public abstract class Player {
     //     }
 	// }
 	
+	private void setDefenceBehavior() {
+	}
+
+	private void setOffenceBehavior() {
+	}
+
 	public void turnover()
 	{
 		this.offence=!this.offence;
