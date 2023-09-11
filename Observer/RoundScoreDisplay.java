@@ -27,26 +27,20 @@ public class RoundScoreDisplay implements Observer{
 	 * This method updates the strokesTotal, and parTotal
 	 * @param values strokesTotal and parTotal pass through
 	 */
-	public void update(int strokesTotal, int parTotal) {
-		this.strokesTotal=strokesTotal;
-		this.parTotal=parTotal;
-		displayRoundScore();
+	public void update(int strokes, int par) {
+		this.strokesTotal+=strokes;
+		this.parTotal+=par;
 	}
-	/**
-	 * This displays the score and appends statements as well using the difference
-	 */
-	public void displayRoundScore() {
-		System.out.print("\nCurrent Hole stats ");
-		
-		System.out.println(" \nPar: "+ parTotal + "\nStrokes:  " + strokesTotal);
 	
-		int diff =0;
-		diff = parTotal - strokesTotal;
-		if(diff==0)
-			System.out.println("Made par");
-		else if(diff < 0)
-			System.out.println(Math.abs(diff) + " over par");
-		else if(diff>0)
-			System.out.println(diff + " under par");
-	}
+    public String toString()
+    {
+        return "RoundScoreDisplay: Total Strokes=" + strokesTotal + ", Total Par=" +parTotal;
+
+    }
+
+    private void display()
+    {
+        System.out.println(this);
+    }
+	
 }
