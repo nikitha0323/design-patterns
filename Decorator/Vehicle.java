@@ -10,23 +10,17 @@ public class Vehicle {
         this.lines = lines;
     }
 
-    public void setColor(String c)
+   public String toString()
+   {
+    StringBuilder sb = new StringBuilder();
+    for(String line : lines)
     {
-        lines.add(c);
+        sb.append(line).append("\n");
+    
     }
+    return sb.toString();
 
-    public String toString()
-    {
-        StringBuilder result = new StringBuilder();
-        for(String l : lines)
-        {
-            result.append(l).append("\n");
-        }
-        return result.toString();
-    }
 
-    public ArrayList<String> getLines() {
-        return null;
-    }
+   }
     
 }

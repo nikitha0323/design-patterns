@@ -11,6 +11,6 @@ public abstract class VehicleDecorator extends Vehicle {
         this.decoratedVehicle = decoratedVehicle;
     }
 
-    public abstract String toString();
+    public abstract void integrateDecor(ArrayList<String> d);
     
 }

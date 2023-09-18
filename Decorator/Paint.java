@@ -31,7 +31,7 @@ public class Paint extends VehicleDecorator {
             case "cyan":
                 lines.replaceAll(line -> "\u001B[36m" + line);
                 break;
-            case "black":
+            case "none":
             default:
                 lines.replaceAll(line -> "\u001B[0m" + line);
                 break;
@@ -42,9 +42,4 @@ public class Paint extends VehicleDecorator {
         this.lines.addAll(d);
     }
 
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'toString'");
-    }
 }
