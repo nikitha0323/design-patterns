@@ -7,7 +7,7 @@ public class SpanishState extends State {
 
     @Override
     public void pressEnglishButton() {
-        book.setState(new EnglishState(book));
+        book.pressEnglishButton();
     }
 
     @Override
@@ -17,7 +17,6 @@ public class SpanishState extends State {
 
     @Override
     public void pressFrenchButton() {
-        book.setState(new FrenchState(book));
+        book.pressFrenchButton();
     }
 }
-
