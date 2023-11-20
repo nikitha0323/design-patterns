@@ -2,80 +2,111 @@ package State;
 
 import java.util.Scanner;
 
-public class BookDriver {
+public class BookDriver 
+{
     private Scanner reader;
     private BabyBook book;
-    private static final String[] mainOptions = { "Pick an Animal", "Switch to English", "Switch to Spanish",
-            "Switch to French", "Quit" };
+    private static final String[] mainOptions = 
+    { "Pick an Animal", 
+    "Switch to English", 
+    "Switch to Spanish",
+    "Switch to French",
+    "Quit" 
+    };
 
-    public BookDriver() {
+    public BookDriver() 
+    {
         reader = new Scanner(System.in);
         book = new BabyBook();
     }
 
-    public void run() {
+    public void run() 
+    {
         clear();
-        System.out.println("Welcome to our Baby Book");
+        System.out.println("Welcome to our Baby Book!");
 
-        while (true) {
+        while (true) 
+        {
             int option = getUserOption();
 
             clear();
-            if (option == 1) {
+            if (option == 1) 
+            {
                 playAnimalSound();
-            } else if (option == 2) {
+            } 
+            else if (option == 2) 
+            {
                 book.pressEnglishButton();
-            } else if (option == 3) {
+            } 
+            else if (option == 3) 
+            {
                 book.pressSpanishButton();
-            } else if (option == 4) {
+            } 
+            else if (option == 4) 
+            {
                 book.pressFrenchButton();
-            } else if (option == 5) {
+            } 
+            else if (option == 5) 
+            {
                 System.out.println("Goodbye");
                 break;
-            } else {
+            } 
+            else 
+            {
                 System.out.println("Sorry Invalid command");
             }
         }
     }
 
-    private void playAnimalSound() {
+    private void playAnimalSound() 
+    {
         displayAnimalOptions();
-        while (true) {
+        while (true) 
+        {
             System.out.print("Enter your animals number: ");
-            try {
+            try 
+            {
                 int animalNumber = Integer.parseInt(reader.nextLine()) - 1;
                 String animal = book.getAnimalList().get(animalNumber);
                 book.pressAnimalButton(animal);
                 return;
-            } catch (Exception e) {
+            } 
+            catch (Exception e) 
+            {
                 System.out.println("That is not a valid number");
                 continue;
             }
         }
     }
 
-    private void displayAnimalOptions() {
+    private void displayAnimalOptions() 
+    {
         System.out.println("Animals:");
         int counter = 1;
-        for (String animal : book.getAnimalList()) {
+        for (String animal : book.getAnimalList()) 
+        {
             System.out.println(counter + ". " + animal);
             counter++;
         }
     }
 
-    private int getUserOption() {
-        for (int i = 0; i < mainOptions.length; i++) {
+    private int getUserOption() 
+    {
+        for (int i = 0; i < mainOptions.length; i++) 
+        {
             System.out.println((i + 1) + ". " + mainOptions[i]);
         }
         return Integer.parseInt(reader.nextLine());
     }
 
-    public void clear() {
+    public void clear() 
+    {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         BookDriver driver = new BookDriver();
         driver.run();
     }

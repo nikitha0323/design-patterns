@@ -1,22 +1,25 @@
 package State;
 
-public class EnglishState extends State {
-    public EnglishState(BabyBook book) {
+public class EnglishState extends State 
+{
+    public EnglishState(BabyBook book) 
+    {
         super(book);
     }
 
-    @Override
-    public void pressEnglishButton() {
+    public void pressEnglishButton() 
+    {
         System.out.println("Already in English state");
     }
 
-    @Override
-    public void pressSpanishButton() {
+    
+    public void pressSpanishButton() 
+    {
         book.pressSpanishButton();
     }
 
-    @Override
-    public void pressFrenchButton() {
+    public void pressFrenchButton() 
+    {
         book.pressFrenchButton();
     }
 }

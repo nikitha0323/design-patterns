@@ -1,9 +1,11 @@
 package State;
 
-public abstract class State {
+public abstract class State 
+{
     protected BabyBook book;
 
-    public State(BabyBook book) {
+    public State(BabyBook book) 
+    {
         this.book = book;
     }
 
